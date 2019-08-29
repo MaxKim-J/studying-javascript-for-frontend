@@ -35,6 +35,7 @@ this - 요소 자기 자신을 가리키는 키워드
 */
 
 // 클래스 속성을 동적으로 바꿈
+// css 애니메이션의 동적 효과
 document.getElementById("wrap").onmouseover = function(){
   this.setAttribute("class", "over");
 };

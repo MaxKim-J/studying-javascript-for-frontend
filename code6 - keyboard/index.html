@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript code function</title>
+    <style>
+        div{
+            border: solid red 5px;
+            padding: 40px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <p class="test"></p>
+            <p class="test"></p>
+            <p class="test"></p>
+            <p class="test"></p>
+        </div>
+        <div>
+            <p id="testhref"></p>
+            <a href="javascript:getDate();">오늘의 날짜는?</a>
+        </div>
+        <div>
+            <p id="testbutton">버튼 누르면 변함</p>
+            <button onclick="changeText()">텍스트 변환</button>
+            <button id="btn">텍스트 변환2</button>
+        </div>
+        <div>
+            <p id="testcolor">마우스 오버하면 색깔 변함</p>
+            <button id="btn2" onclick="alert('실행문1');" onclick="alert('실행문2');">실행문</button>
+            <button id="btn3">실행문2</button>
+            <!-- 중복된 이벤트 구별 불가능 addeventlistner사용하기-->
+        </div>
+        <div>
+            <p id="timer"></p>
+            <button id="starttimer">타이머 시작</button>
+        </div>
+    </div>
+    <script type="text/Javascript" src="js/main.js"></script>
+</body>
+
+</html>

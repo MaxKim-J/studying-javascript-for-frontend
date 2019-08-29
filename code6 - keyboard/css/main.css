@@ -1,0 +1,24 @@
+img {
+    width:300px;
+    height:300px;
+}
+
+div#wrap {
+    border: 3px solid black;
+    padding: 100px;
+}
+
+div.over > img{
+    animation-name: move;
+    animation-duration: 3s;
+}
+
+@keyframes move {
+    from{
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+        margin-top: -15%;
+    }
+}

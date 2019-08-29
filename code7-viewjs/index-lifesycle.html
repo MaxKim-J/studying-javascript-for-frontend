@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Vue Instance Lifecycle</title>
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue.js!'
+        },
+        beforeCreate: function() {
+          console.log("beforeCreate");
+        },
+        created: function() {
+          console.log("created");
+        },
+        mounted: function() {
+          console.log("mounted");
+          this.message = 'Hello Vue!';
+        },
+        updated: function() {
+          console.log("updated");
+        }
+
+        /*
+        *** 뷰 인스턴스 라이프 사이클 - 
+        created 속성 처럼 인스턴스의 상태에 따라 호출할 수 있는 속성들을 라이프 사이클 속성이라고 함
+        거기서 진행되는 로직을 라이프 사이클 훅이라고 함
+        일단 생성(create)->부착(mount)->갱신(update)->소멸(destroyed) 이라고 알아두자
+        프론트엔드 위의 타임라인 지정 - 언제 뭘 어떻게 할것인지 intervention
+
+        updated 라이프 사이클 훅은 인스턴스에서 데이터 변경이 일어나
+        화면이 다시 그려졌을때 호출되는 로직임 - 바뀌면 콘솔로그가 찍힌다
+        데이터가 갱신이 되었기 때문에 update다음 로직이 찍히는 것
+        */
+
+
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Vue Sample</title>
+</head>
+
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script>
+        // 뷰 인스턴스 - 뷰로 화면을 개발하기 위해 필수적으로 생성해야 하는 단위
+        new Vue({
+            el: '#app',     
+            //el 속성 - 뷰 인스턴스가 그려질 지점 
+            data: {
+                message: 'Hello Vue.js!'    
+                //데이터 속성, message값을 정의하여 화면의 {{ message }}로 연결
+            }
+        });
+
+        /*
+        *** 뷰 인스턴스 생성자 - 
+        Vue를 생성자라고 함(새로운 객체를 만들엇긔)
+
+        뷰로 개발할때 필요한 기능들을 생성자에 미리 정의해놓고 사용자가 그 기능을 재정의하여 편리하게 사용
+        el과 data는 미리 정의되어 있는 속성이며, 그 안에 message - 새로운 속성을 추가하고 값 줬음
+        vue객체 안에 data객체(vue객체 입장에선 속성) 안의 속성
+        el은 여기서 돔요소중 id, css선택자 규칙과 같음 이외에도 template, methods, created같은 속성 있음
+
+        *** 뷰 인스턴스 유효 범위 -
+        new Vue()로 인스턴스를 생성하면 화면에서 뷰라이브러리 파일 로딩(cdn) -> 인스턴스 객체 생성(new) -> 특정 화면 요소에 인스턴스 붙임(new-el)
+        -> 인스턴스 내용이 화면 요소로 변환(vue가 html화) - > 변환된 화면 요소를 확인
+        약간 찾기 -> 덮기 -> 바뀌기 같음
+        인스턴스의 유효 범위는 el속성과 일치하는 태그 안
+        */
+
+    </script>
+</body>
+
+</html>

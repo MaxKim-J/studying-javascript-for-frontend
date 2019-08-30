@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Props Sample</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 팁 : 오른쪽에서 왼쪽으로 속성을 읽으면 더 수월합니다. -->
+      <!-- v-bind 속성 추가, 속성이름, 데이터 속성 지정-->
+      <child-component v-bind:propsdata="message"></child-component>
+      <!-- 상위 컴포넌트 message 속성 값인 텍스트를 하위 컴포의 propsdata로 전달-->
+      <child-component2 v-on:show-log="printText"></child-component2>
+      <!-- 하위 컴포넌트의 이벤트명="상위컴포넌트의 매서드명"-->
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script>
+
+
+      Vue.component('child-component', {
+        // props속성 사용 - 하위 컴포넌트의 속성에 정의
+        // props - 상위에서 하위로 데이터를 전달할때 사용하는 속성
+        props: ['propsdata'], // props 속성 이름
+        template: '<p>{{ propsdata }}</p>',
+      });
+
+      Vue.component('child-component2', {
+        template: '<button v-on:click="showLog">show</button>', //버튼 요소 추가
+        // 메서드 추가
+        methods: {
+          showLog: function(){
+            this.$emit('show-log');
+            //이벤트 발생 로직, showlog()메서드
+          }
+        }
+      })
+
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue! passed from Parent Component'
+        },
+        methods:{
+          printText: function(){
+            console.log("received an event");
+          }
+        }
+      });
+
+
+
+      /*
+      *** 상하위 컴포넌트 관계
+        뷰 프레임워크 자체에서 정의한 컴포넌트 데이터 전달 방법 따라야
+        상위-하위 컴포넌트 간의 데이터 전달 방법
+        부모-자식으로 이루어진 컴포넌트의 관계 
+        상위에서 하위로는 props를 전달 가능, 하위에서 상위로는 이벤트만 전달 가능
+      
+      *** 상위 -> 하위 (props - 단방향 데이터 흐름)
+        하위 컴포넌트에 지정한 props값으로 propsdata정의하고(component)
+        propsdata를 html태그가 상위 컴포 message 속성값과 짝지어줌(html)
+        하위컴포의 템플릿 데이터값이 상위 컴포의 message 텍스트가 됨(확인)
+        요 과정 거쳐서 상위 컴포넌트의 속성값 참조 가능 (복잡,,)
+
+      *** 인스턴스와 컴포넌트 관계
+        하위 컴포넌트를 등록함과 동시에 뷰 인스턴스 자체가 상위 컴포가 됨
+        인스턴스에 새로운 컴포를 등록하면 기존에 있는 컴포넌트는 상위가 되고 새로
+        등록된 컴포는 하위 컴포가 됨
+
+      *** 하위 -> 상위 (event emit)
+        이벤트를 발생시켜 상위 컴포넌트에 신호를 보내버리기
+        상위 컴포넌트에서 하위 컴포넌트의 특정 이벤트가 발생하기를 기다리고 있다가
+        하위 컴포에서 특정 이벤트가 발생하면 상위 컴포에서 해당 이벤트를 수신하여
+        상위 컴포의 메서드를 호출
+        
+        버튼을 클릭하면 버튼 클릭 이벤트에따라 showLog()메서드 실행(컴포넌트에서 정의)
+        메서드 안의 show-log이벤트 발생
+        show-log이벤트는 v-on:show-log에 전달(html) 대상 메서드인 최상위 컴포넌트 매서드 printText실행됨
+        printtext()는 received an event라는 로그를 출력, 마지막으로 콘솔에 로그 출력
+      */
+    </script>
+  </body>
+</html>

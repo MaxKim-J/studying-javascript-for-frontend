@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Event Bus Sample</title>
+  </head>
+  <body>
+      
+    <div id="app">
+      <child-component></child-component>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script>
+
+      var eventBus = new Vue();     //바지 인스턴스(버스로만 쓰일)
+
+      Vue.component('child-component', {
+        template: '<div>하위 컴포넌트 영역입니다.<button v-on:click="showLog">show</button></div>',
+        methods: {
+          showLog: function() {
+            eventBus.$emit('triggerEventBus', 100);     //보내는 컴포
+          }
+        }
+      });
+
+      var app = new Vue({
+        el: '#app',
+        created: function() {
+          eventBus.$on('triggerEventBus', function(value){  //받는 컴포(상위컴포-인스턴스)
+            console.log("이벤트를 전달 받음. 전달 받은 값 : ", value);
+          });
+        }
+      });
+
+      /*
+      *** 이벤트 버스:
+        이벤트 버스는 개발자가 지정한 두개의 컴포넌트 간에
+        데이터를 주고받을 수 있는 방법, 굳이 상하위구조가 아니더라도 데이터 전달 가능
+        이벤트 버스를 구현하려면 애플리케이션 로직을 담는 인스턴스와는 별개로 새로운 인스턴스를 1개 더 생성
+        새 인스턴스를 사용하여 이벤트를 보내고 받는다
+      */
+    </script>
+  </body>
+</html>

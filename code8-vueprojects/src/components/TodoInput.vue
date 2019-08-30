@@ -9,6 +9,8 @@
 
 <script>
 export default {
+
+    
     data(){
         return{
             newTodoItem: ''
@@ -19,9 +21,9 @@ export default {
             // 메서드의 로직 정리
             // 입력값이 없을때 걸러주는 예외처리 코드
             if (this.newTodoItem !== ""){
-                var value = this.newTodoItem && this.newTodoItem.trim();
+                var todoItem = this.newTodoItem && this.newTodoItem.trim();
                 // trim으로 앞뒤 공백 문자열 제거
-                localStorage.setItem(this.newTodoItem, this.newTodoItem) //(키, 값)
+                this.$emit('addTodo', todoItem)
                 this.clearInput();  // clear 인풋 메서드 호출
                 // this는 해당 컴포넌트를 가리킴(여기서는 App)
             }

@@ -10,7 +10,7 @@
       </li>
     </transition-group>
   </section>
-</template>
+</template> 
 
 <script>
 export default {

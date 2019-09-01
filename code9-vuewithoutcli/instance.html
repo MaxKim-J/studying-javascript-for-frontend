@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      {{ message }}
+      <!--뷰의 기능과 속성들이 유효하다-->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+      var vm = new Vue({
+        el: "#app", //app id태그를 찾아 인스턴스를 붙이겠다; element
+        data: {
+          message: "hi"
+        }
+      });
+    </script>
+  </body>
+</html>

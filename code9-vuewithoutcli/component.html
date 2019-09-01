@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <app-header></app-header>
+        <app-content></app-content>
+        <app-footer></app-footer>
+    </div>
+    <div id="app2">
+        <app-header></app-header>
+        <app-content></app-content>
+        <app2-content></app2-content>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        //전역 컴포넌트 - 잘 안쓸것,, 
+        //다른 인스턴스에 등록할 필요는 없음
+        Vue.component('app-header', {
+            template: '<h1>Header나는 전역컴포넌트야</h1>'
+        });
+        Vue.component('app-content', {
+            template: '<div>내용내용내용 나도 전역이지</div>'
+        });
+
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                message: "hi"
+            },
+            //지역 컴포넌트 - 많이 쓸 것
+            components: {
+                'app-footer': {
+                    template: '<footer>여기는 app1의 지역컴포넌트야</footer>'
+                },
+            }
+        });
+
+        var vm2 = new Vue({
+            el: "#app2",
+            components: {
+                'app2-content': {
+                    template: '<footer>난 app2의 지역컴포넌트야</footer>'
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

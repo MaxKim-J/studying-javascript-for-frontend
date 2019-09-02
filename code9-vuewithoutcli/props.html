@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Started</title>
+  </head>
+
+  <body>
+    <div id="app">
+        <!-- 둘을 바디에서 매칭시킴 -->
+        <!-- <app-header v-bind: 프롭스 속성이름 = "상위 컴포넌트 데이터 이름"></app-header> -->
+        <app-header v-bind:propsdata="messages"></app-header>
+        <app-content v-bind:propsdata="num"></app-content>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+    var appHeader = {
+        template:'<h1>{{ propsdata }}</h1>',
+        props: ['propsdata'],
+    }
+
+    var appContent = {
+        template: '<div>{{ propsdata }}</div>',
+        props: ['propsdata'], //이름은 똑같아도 구분이 된다
+    }
+      var vm = new Vue({
+        el: "#app",
+        components:{
+            'app-header': appHeader,
+            'app-content': appContent
+        },
+        data: {
+            messages: 'hi',
+            num : 10,
+            // 최상위 인스턴스의 데이터
+        }
+      });
+    </script>
+  </body>
+</html>

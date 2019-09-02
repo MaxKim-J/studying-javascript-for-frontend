@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Started</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            {{ num }}
+        </div>
+
+        <!-- <app-header v-on:하위 컴포넌트에서 발생한 이벤트 이름="상위컴포넌트의 매서드"></app-header> -->
+        <app-header v-on:pass="logText"></app-header>
+        <app-content v-on:add="numberadd"></app-content>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+
+        var appHeader = {
+            template: '<button v-on:click="passEvent">sub</button>',
+            methods: {
+                passEvent: function () {
+                    this.$emit('pass')
+                }
+            }
+        };
+
+        var appContent = {
+            template: '<button v-on:click="addNumber">add</button>',
+            methods: {
+                addNumber: function () {
+                    this.$emit('add')
+                }
+            }
+        };
+
+        var vm = new Vue({
+            el: "#app",
+            components: {
+                'app-header': appHeader,
+                'app-content': appContent
+            },
+            data: {
+                messages: 'hi',
+                num: 10,
+                // 최상위 인스턴스의 데이터
+            },
+            methods: {
+                logText: function () {
+                    this.num--;
+                },
+                numberadd: function () {
+                    this.num++;
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>

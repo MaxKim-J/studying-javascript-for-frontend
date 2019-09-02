@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Started</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            {{ num }}
+        </div><br/>
+        <app-header v-bind:propsdata="num"></app-header>
+        <app-content v-on:pass="deliverNum"></app-content>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        // 앱컨텐츠에서 헤더로 데이터 이동
+        // 컨텐츠(event emit) -> 루트 -> 헤더(props) 경유해서 가기
+
+        var appHeader = {
+            props: ['propsdata'],
+            template: '<div>헤더</div>',
+        };
+
+        var appContent = {
+            template: '<div>콘텐츠<button v-on:click="passNum">pass</button></div>',
+            methods:{
+                passNum: function() {
+                    this.$emit('pass', 10)
+                }
+            }
+        };
+
+        var vm = new Vue({
+            el: "#app",
+            components: {
+                'app-header': appHeader,
+                'app-content': appContent
+            },
+            data: {
+                str: "hi",
+                num: 0,
+            },
+            methods: {
+                // 하위 텀포넌트의 이벤트메소드 넘어오는 인자를 value로 지정
+                deliverNum: function(value){
+                    this.num = value;
+                    //이벤트를 통해 루트에 데이터를 올림
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

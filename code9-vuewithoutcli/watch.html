@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Started</title>
+</head>
+
+<body>
+    <div id="app">
+        {{ num }}
+        {{ doubleNum }}
+        <button v-on:click="addNum">increase</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                num: 10,
+            },
+            computed:{
+                // 단순한 값에 대한 계산 (validation)
+                // 텍스트의 입력을 받아서 벨리데이션 값 계산 
+                doubleNum: function(){
+                    return this.num * 2
+                }
+            },
+            watch:{
+                // num이 바뀔 때 마다 해당 로직을 실행
+                // 무거운 로직들 
+                num: function(){
+                    this.logText();
+                }
+            },
+            methods: {
+                addNum: function(){
+                    this.num++;
+                },
+                logText: function(){
+                    console.log('changed');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

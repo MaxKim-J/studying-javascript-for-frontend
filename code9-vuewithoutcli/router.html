@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <!--라우터 링크, 앵커태그로 변환되서 나타남-->
+            <router-link to="/login">login</router-link>
+            <router-link to="/main">main</router-link>
+        </div>
+        <router-view></router-view>
+        <!-- 뷰에다가 라우터를 정의해야만 사용할 수 있는 태그-->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+    <!-- 뷰 라우터 cdn -->
+
+    <script>
+
+        var LoginComponent = {
+            template: "<div>login</div>"
+        }
+        var MainComponent = {
+            template: "<div>main</div>"
+        }
+        var router = new VueRouter({
+            // 페이지의 라우팅 정보 
+            routes: [
+                {   //첫번쨰 페이지(로그인)
+                    //페이지의 url 이름
+                    path: '/login',
+                    name: 'login',
+                    component: LoginComponent
+                    //해당 url에서 표시될 컴포넌트
+                },
+                {   //두번째 페이지(메인)
+                    path: '/main',
+                    name: 'main',
+                    component: MainComponent
+                }
+            ]
+        });
+
+        new Vue({
+            el: '#app',
+            router: router
+            //위에서 정의한 라우터 변수, data안에 $router 주입된 상태, 인스턴스와 라우터를 연결한 상태
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p v-bind:id="uuid" v-bind:class="name">{{ str }}</p>
+        <!-- uuid를 반영하여 바인딩, 인스턴스의 데이터에서 관리하는 특정 데이터의 값이 연결이된다-->
+        <p>{{ doubleNum }}</p>
+        <div v-if = "loading">
+            Loading...
+        </div>
+        <div v-else>
+            test user has been logined
+        </div>
+        <div v-show="loading">
+            Loading
+        </div>
+        <input type="text" v-model="message">
+        <p>{{ message }}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 뷰에서 일단 문제해결 방법을 찾는게 좋다 - 내장되어 잇슴
+        new Vue({
+            el:'#app',
+            data: {
+                str:"hi",
+                num: 10,
+                uuid: 'abc1234',
+                name: 'text-blue',
+                loading: true,
+                message: "",
+            },
+            computed: {
+                // 데이터 속성 변화할때 넣어주는 속성, 계산된 속성
+                doubleNum : function() {
+                    return this.num * 2;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

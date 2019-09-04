@@ -4,12 +4,20 @@
       <div>
           {{ propsdata }}
       </div>
+      <div>
+          <button v-on:click="sendEvent">send</button>
+      </div>
   </header>
 </template>
 
 <script>
 export default {
-    props: ['propsdata']
+    props: ['propsdata'],
+    methods :{
+        sendEvent: function(){
+            this.$emit('renew')
+        }
+    }
 }
 </script>
 

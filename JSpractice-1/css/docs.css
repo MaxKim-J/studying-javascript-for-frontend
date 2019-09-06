@@ -4,15 +4,17 @@
     text-decoration: none;
 }
 
-/* div {
+div {
     border: 1px solid white;
-}  */
+} 
 
 
 .wrap{
     display: flex;
     flex-direction: column;
 }
+
+/* NavBar */
 
 .header {
     position: fixed;
@@ -59,15 +61,68 @@
     padding:22px 20px;
 }
 
-.section-main{
-    z-index:8;
-    position: sticky;
-    top:80px;
+/* section */
+
+.section {
+    width: 100%;
 }
 
+.section-main{
+    display:flex;
+    flex-shrink: 1;
+    background-image: url('/JSpractice-1/static/back.jpg');
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+    background-size: cover;
+    z-index:999;
+    max-width: 100%;
+    height: 1000px;
+}
+
+.section-main-content {
+    background-attachment: fixed;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 400px auto;
+    color:white;
+    text-align: center;
+    font-size:50px;
+}
+
+.section-main-margin{
+    flex-grow:1;
+    flex-shrink: 1;
+}
+
+.section-main-content-title{
+
+}
+
+.section-main-content-box{
+    display: flex;
+    flex-direction: row; 
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.section-main-content-box > div {
+    float: left;
+    padding: 100px 200px;
+}
+
+.section-main-content-personal{
+    flex-basis: 200px;
+    margin-right: 10px;
+}
+
+.section-main-content-company{
+    flex-grow: 2;
+    flex-basis: 200px;    
+    margin-left: 10px;
+}
 
 .section-second {
     background-color: white;
-    height: 500px;
+    height: 1000px;
     z-index:1;
 }

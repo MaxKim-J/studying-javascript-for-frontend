@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/docs.css">
     <title>Google문서</title>
+    <script type="text/Javascript" src="js/docs.js"></script>
 </head>
 
 <body>
@@ -16,33 +17,37 @@
                 <img src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_dark_color_92x36dp.png">
             </div>
             <div class="header-left">
-                <div class= "header-left-box">
-                    <div class= "header-left-box-title">
-                        <img src="https://www.google.com/images/about/docs-icon.svg">&nbsp; 문서
+                <div class="header-left-box">
+                    <div class="header-left-box-title">
+                        <img src="https://www.google.com/images/about/docs-icon.svg">&nbsp;
+                        <a href="#">문서</a>
                     </div>
-                    <div class= "header-left-box-color-active"></div>
+                    <div class="header-left-box-color-active"></div>
                 </div>
-                <div class= "header-left-box">
-                    <div class= "header-left-box-title">
-                        <img src="https://www.google.com/images/about/sheets-icon.svg">&nbsp; 스프레드시트
+                <div class="header-left-box">
+                    <div class="header-left-box-title" id="spread">
+                        <img src="https://www.google.com/images/about/sheets-icon.svg">&nbsp;
+                        <a href="#">스프레드시트</a>
                     </div>
-                    <div class= "header-left-box-color"></div>
+                    <div class="header-left-box-color" id="spreadColor"></div>
                 </div>
-                <div class= "header-left-box">
-                    <div class= "header-left-box-title">
-                        <img src="https://www.google.com/images/about/slides-icon.svg">&nbsp; 프레젠테이션
+                <div class="header-left-box">
+                    <div class="header-left-box-title" id="presentation">
+                        <img src="https://www.google.com/images/about/slides-icon.svg">&nbsp;
+                        <a href="#">프레젠테이션</a>
                     </div>
-                    <div class= "header-left-box-color"></div>
+                    <div class="header-left-box-color" id="presentationColor"></div>
                 </div>
-                <div class= "header-left-box">
-                    <div class= "header-left-box-title">
-                            <img src="https://www.google.com/images/about/forms-icon.svg">&nbsp; 설문지                    
+                <div class="header-left-box">
+                    <div class="header-left-box-title" id="query">
+                        <img src="https://www.google.com/images/about/forms-icon.svg">&nbsp;
+                        <a href="#">설문지</a>
                     </div>
-                    <div class= "header-left-box-color"></div>
+                    <div class="header-left-box-color" id="queryColor"></div>
                 </div>
             </div>
             <div class="header-right">
-                <div>뿅</div>
+                <div id="js-header-right-popout"></div>
                 <div>기업용</div>
                 <div>도움말</div>
             </div>
@@ -50,49 +55,51 @@
         <div class="section">
             <div class="section-main">
 
-                <div class="section-main-content">
-
-                    <div class="section-main-content-title">
-                        인상적인 문서 만들기
-                    </div>
-
-                    <div class="section-main-content-boxes">
-
-                        <div class="section-main-content-box1">
-                            <div class="section-main-content-box-title">
-                                개인
-                            </div>
-                            <div class="section-main-content-box-image1">
-                                <img src="https://www.google.com/images/about/docs-icon.svg">
-                            </div>
-                            <div class="section-main-content-box-notice">
-                                Google 문서로 어디서나 문서를 작성, 수정하고 공동작<br />
-                                업을 진행해 보세요. 무료로 이용하실 수 있습니다.
-                            </div>
-                            <div class="section-main-content-box-linkbox">
-                                <a href="#">Goolge 문서로 이동하기</a>
-                            </div>
+                <div class="section-main-wrap">
+                    <div class="section-main-content" id="js-section-main-fade">
+                        <div class="section-main-content-title">
+                            인상적인 문서 만들기
                         </div>
 
-                        <div class="section-main-content-box2">
-                            <div class="section-main-content-box-title">
-                                기업
+                        <div class="section-main-content-boxes">
+
+                            <div class="section-main-content-box1">
+                                <div class="section-main-content-box-title">
+                                    개인
+                                </div>
+                                <div class="section-main-content-box-image1">
+                                    <img src="https://www.google.com/images/about/docs-icon.svg">
+                                </div>
+                                <div class="section-main-content-box-notice">
+                                    Google 문서로 어디서나 문서를 작성, 수정하고 공동작<br />
+                                    업을 진행해 보세요. 무료로 이용하실 수 있습니다.
+                                </div>
+                                <div class="section-main-content-box-linkbox">
+                                    <a href="#">Goolge 문서로 이동하기</a>
+                                </div>
                             </div>
-                            <div class="section-main-content-box-image2">
-                                <img src="https://www.google.com/images/about/gsuite-logo.svg">
+
+                            <div class="section-main-content-box2">
+                                <div class="section-main-content-box-title">
+                                    기업
+                                </div>
+                                <div class="section-main-content-box-image2">
+                                    <img src="https://www.google.com/images/about/gsuite-logo.svg">
+                                </div>
+                                <div class="section-main-content-box-notice">
+                                    Google 문서에 한층 강화된 보안 및 팀을 위한 관리 기능<br />
+                                    이 더해졌습니다.
+                                </div>
+                                <div class="section-main-content-box-linkbox">
+                                    <a href="#">자세히 알아보기</a>
+                                </div>
                             </div>
-                            <div class="section-main-content-box-notice">
-                                Google 문서에 한층 강화된 보안 및 팀을 위한 관리 기능<br />
-                                이 더해졌습니다.
-                            </div>
-                            <div class="section-main-content-box-linkbox">
-                                <a href="#">자세히 알아보기</a>
-                            </div>
+
                         </div>
 
                     </div>
-
                 </div>
+
             </div>
 
             <div class="section-second">
@@ -107,7 +114,7 @@
             </div>
         </div>
     </div>
-    <script type="text/Javascript" src="js/docs.js"></script>
+
 </body>
 
 </html>

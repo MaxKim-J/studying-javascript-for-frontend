@@ -209,14 +209,26 @@ p {
     color: black;
 }
 
-.footer {
+.footer-wrap {
     background-color:  #ededed;
     text-align: left;
+
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    width:70%;
+    margin: 0 auto;
+}
+
+.footer hr {
+    border: thin solid #dddddd;
 }
 
 .footer-follow{
+    padding: 20px 0px;
     display: flex;
-    justify-content: flex-start;
 }
 
 .footer-follow > div {
@@ -225,17 +237,46 @@ p {
 
 .footer-follow > img {
     width: auto;
-    height: 25px;
+    height: 20px;
+    margin-right: 5px;
 }
 
-.twitter {
-    width:32px;
-}
 
 .footer-elements{
+    padding: 30px 0px;
     display: flex;
+    justify-content: space-between;
 }
 
-.footer-elements>div {
-    margin-right: 100px;
+.footer-elements-element-title {
+    font-weight: bold;
+}
+
+.footer-elements-element-content {
+    font-size: 13px;
+}
+
+.footer-elements-element-content :visited{
+    color: #2860C2;
+}
+
+.footer-elements-element-content :link{
+    color: #2860C2;
+}
+
+.footer-elements-element-content :hover{
+    text-decoration: underline;
+    color: #2860C2;
+}
+
+.footer-footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #e5e5e5;
+}
+
+.footer-footer {
+    width:70%;
+    margin: 0 auto;
+    padding: 10px 0px;
 }

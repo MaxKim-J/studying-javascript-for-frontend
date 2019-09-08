@@ -15,11 +15,11 @@ a:hover {
      color: gray; text-decoration: none;
     }
 
-
-/* div {
+/* 
+div {
     border: 1px solid white;
-}  */
-
+}  
+*/
 
 .wrap{
     display: flex;
@@ -201,4 +201,41 @@ a:hover {
 .section-second-content2 {
     background-color: white;
     height: 500px;
+}
+
+/* footer */
+
+p {
+    color: black;
+}
+
+.footer {
+    background-color:  #ededed;
+    text-align: left;
+}
+
+.footer-follow{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-follow > div {
+    padding: 20px 0px;
+}
+
+.footer-follow > img {
+    width: auto;
+    height: 25px;
+}
+
+.twitter {
+    width:32px;
+}
+
+.footer-elements{
+    display: flex;
+}
+
+.footer-elements>div {
+    margin-right: 100px;
 }

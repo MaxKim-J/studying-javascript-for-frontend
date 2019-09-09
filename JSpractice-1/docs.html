@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/docs.css">
+    <link rel="stylesheet" type="text/css" href="css/docs.css">
     <title>Google문서</title>
     <script type="text/Javascript" src="js/docs.js"></script>
+    <script src="https://kit.fontawesome.com/e125671a5e.js"></script>
 </head>
 
 <body>
     <div class=wrap>
         <div class=header>
             <div class="header-logo">
-                <img src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_dark_color_92x36dp.png">
+                <img src="static/Screenshot from 2019-09-09 20-27-02.png">
             </div>
+
             <div class="header-left">
                 <div class="header-left-box">
                     <div class="header-left-box-title">
@@ -46,15 +49,53 @@
                     <div class="header-left-box-color" id="queryColor"></div>
                 </div>
             </div>
+
             <div class="header-right">
                 <div id="js-header-right-popout"></div>
-                <div>기업용</div>
-                <div>도움말</div>
+                <div class="header-right-content">기업용</div>
+                <div class="header-right-content">도움말</div>
+            </div>
+
+            <div class="header-right-icon">
+                <div class="header-right-icon-wrap" onclick="menuExpose();">
+                    <img src="static/Hamburger_icon.png" id="js-icon">
+                </div>
             </div>
         </div>
+
+        <div class="section-main-list" id="js-popup">
+            <div class="section-main-list-content">
+                <img src="https://www.google.com/images/about/docs-icon.svg">&nbsp;
+                <a href="#">문서</a>
+            </div>
+            <hr />
+            <div class="section-main-list-content">
+                <img src="https://www.google.com/images/about/sheets-icon.svg">&nbsp;
+                <a href="#">스프레드시트</a>
+            </div>
+            <hr />
+            <div class="section-main-list-content">
+                <img src="https://www.google.com/images/about/slides-icon.svg">&nbsp;
+                <a href="#">프레젠테이션</a>
+            </div>
+            <hr />
+            <div class="section-main-list-content">
+                <img src="https://www.google.com/images/about/forms-icon.svg">&nbsp;
+                <a href="#">설문지</a>
+            </div>
+            <hr />
+            <div class="section-main-list-content">
+                <a href="#">기업용</a>
+            </div>
+            <hr />
+            <div class="section-main-list-content">
+                <a href="#">도움말</a>
+            </div>
+            <hr />
+        </div>
+
         <div class="section">
             <div class="section-main">
-
                 <div class="section-main-wrap">
                     <div class="section-main-content" id="js-section-main-fade">
                         <div class="section-main-content-title">
@@ -99,7 +140,6 @@
 
                     </div>
                 </div>
-
             </div>
 
             <div class="section-second">
@@ -152,25 +192,28 @@
                                 <p class="footer-elements-element-content"><a href=""> Google 드라이브</a></p>
                                 <p class="footer-elements-element-content"><a href="">Google Cloud Platform</a></p>
                                 <p class="footer-elements-element-content"><a href="">G Suite</a></p>
-                                <p class="footer-elements-element-content"><a href="">Google Apps for Education</a></p>
-                                <p class="footer-elements-element-content"><a href="">Google Apps for Government</a></p>
+                                <p class="footer-elements-element-content"><a href="">Google Apps for Education</a>
+                                </p>
+                                <p class="footer-elements-element-content"><a href="">Google Apps for Government</a>
+                                </p>
                                 <p class="footer-elements-element-content"><a href="">Google 비즈니스 솔루션</a></p>
                             </div>
                         </div>
                     </div>
 
-                        <div class="footer-footer-wrapper">
-                            <div class="footer-footer footer-elements-element-content">
-                                <a href="">Google · </a>
-                                <a href="">개인정보 보호 · </a>
-                                <a href="">약관</a>
-                            </div>
+                    <div class="footer-footer-wrapper">
+                        <div class="footer-footer footer-elements-element-content">
+                            <a href="">Google · </a>
+                            <a href="">개인정보 보호 · </a>
+                            <a href="">약관</a>
                         </div>
-
                     </div>
+
                 </div>
             </div>
         </div>
+
+    </div>
     </div>
 
 </body>

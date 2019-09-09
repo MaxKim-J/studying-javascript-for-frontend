@@ -21,6 +21,42 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// nav bar relative, menu button control
+
+var open = 0;
+
+function menuExpose() {
+    const popup = document.getElementById('js-popup');
+    const section = document.getElementsByClassName('section')[0];
+    const icon = document.getElementById('js-icon');
+
+    if (open === 0) {
+        popup.style.display = "block";
+        section.style.display = "none";
+        icon.src = "static/x_icon.png"
+        open++;
+    } else {
+        console.log(open)
+        popup.style.display = "none";
+        section.style.display = "block";
+        icon.src = "static/Hamburger_icon.png"
+        open--;
+    }
+   
+}
+
+window.onresize = function () {
+    const popup = document.getElementById('js-popup');
+    const section = document.getElementsByClassName('section')[0];
+    const width = window.innerWidth
+    console.log(width)
+    if (open === 1 && width > 1300) {
+        popup.style.display = "none";
+        section.style.display = "block";
+        open--;
+    }
+}
+
 
 // ajax, axios, es6 비동기처리
 // vue 문법, 

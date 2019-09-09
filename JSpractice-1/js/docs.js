@@ -49,7 +49,9 @@ window.onresize = function () {
     const popup = document.getElementById('js-popup');
     const section = document.getElementsByClassName('section')[0];
     const width = window.innerWidth
-    console.log(width)
+    const icon = document.getElementById('js-icon');
+    icon.src = "static/Hamburger_icon.png"
+
     if (open === 1 && width > 1300) {
         popup.style.display = "none";
         section.style.display = "block";

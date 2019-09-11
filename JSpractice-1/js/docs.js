@@ -36,7 +36,6 @@ function menuExpose() {
         icon.src = "static/x_icon.png"
         open++;
     } else {
-        console.log(open)
         popup.style.display = "none";
         section.style.display = "block";
         icon.src = "static/Hamburger_icon.png"

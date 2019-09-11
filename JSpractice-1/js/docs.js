@@ -45,6 +45,8 @@ function menuExpose() {
    
 }
 
+// resize icon control
+
 window.onresize = function () {
     const popup = document.getElementById('js-popup');
     const section = document.getElementsByClassName('section')[0];
@@ -58,7 +60,3 @@ window.onresize = function () {
         open--;
     }
 }
-
-
-// ajax, axios, es6 비동기처리
-// vue 문법, 

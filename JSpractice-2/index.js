@@ -19,6 +19,7 @@ const maxInfo = sayHello("max", 24);
 console.log(maxInfo);
 
 // 객체 안에 함수 넣기(클래스 메소드 같은)
+// 어떤 의미에선 파이썬보다 직관적일거같기도
 const calculator = {
     plus: function (a, b) {
         return a + b;
@@ -30,3 +31,35 @@ const calculator = {
 
 const plusValue = calculator.plus(3, 6);
 console.log(plusValue);
+
+// DOM - Document Object Model
+// console.log(document); document 전체를 토해낸다, 이것 자체를 객체로 가짐
+
+const title = document.querySelector("#title");
+// 쿼리 셀렉터는 css의 선택자와 똑같다 . 클래스/ # 아이디
+console.log(title); // title dom 객체를 반환한다
+
+title.innerHTML = "Hi, From JS";
+
+// 자바스크립트 dom 객체의 스타일 값역시 카멜로 쓰임
+title.style.color = "red"
+
+// 도큐먼트 값 변수의 타이틀 바꾸기
+document.title = "jspractice2"
+
+// intercepting events
+// window. -> click, resize, printing.. 등등의 window event들도 객체로 가져온다
+
+function handleResize(event) {
+    console.log("I have been resized")
+    // event 인자 - 이벤트리스너가 듣는 이벤트
+    console.log(event);
+}
+
+function handleClick() {
+    title.style.color = "blue"
+}
+// 자스에선 함수를 참조할때 ()를 쓰지 않는다, ()는 호출할때만
+// 이런 상황에서 호출하게되면 바로 처 나온다 그러므로 쓰지 말것
+window.addEventListener("resize", handleResize)
+title.addEventListener("click", handleClick)

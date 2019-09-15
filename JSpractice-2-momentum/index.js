@@ -42,7 +42,6 @@ console.log(title); // title dom 객체를 반환한다
 title.innerHTML = "Hi, From JS";
 
 // 자바스크립트 dom 객체의 스타일 값역시 카멜로 쓰임
-title.style.color = "red"
 
 // 도큐먼트 값 변수의 타이틀 바꾸기
 document.title = "jspractice2"
@@ -56,10 +55,50 @@ function handleResize(event) {
     console.log(event);
 }
 
-function handleClick() {
-    title.style.color = "blue"
-}
+
+
 // 자스에선 함수를 참조할때 ()를 쓰지 않는다, ()는 호출할때만
 // 이런 상황에서 호출하게되면 바로 처 나온다 그러므로 쓰지 말것
 window.addEventListener("resize", handleResize)
 title.addEventListener("click", handleClick)
+
+// 조건 분기 style 바꾸기
+
+// const BASE_COLOR = "blue"
+// const OTHER_COLOR = "red"
+
+// function handleClick() {
+//     const currentColor = title.style.color;
+//     if (currentColor === BASE_COLOR) {
+//         title.style.color = OTHER_COLOR;
+//     } else {
+//         title.style.color = BASE_COLOR;
+//     }
+// };
+
+// class 바꾸기 분기 => classlist를 쓰자 
+// contains, add, remove, toggle
+
+const CLICKED_CLASS = "clicked";
+
+function handleClick() {
+    // const hasClass = title.classList.contains(CLICKED_CLASS);
+    // if (!hasClass) {
+    //     title.classList.add(CLICKED_CLASS);
+    // } else {
+    //     title.classList.remove(CLICKED_CLASS);
+    // }
+
+    title.classList.toggle(CLICKED_CLASS);
+}
+
+function init() {
+    title.addEventListener("click", handleClick);
+};
+init();
+
+//
+
+
+
+

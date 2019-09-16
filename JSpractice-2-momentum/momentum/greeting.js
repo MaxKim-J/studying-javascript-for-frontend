@@ -32,6 +32,7 @@ function askForName() {
 }
 // local storage - 유저 브라우저에 저장
 // 쿼리를 쓸수 있음 localstorage.setItem/getItem
+// based on url  유알엘 단위로 작동
 
 function loadName() {
     const currentUser = localStorage.getItem(USER_LS);

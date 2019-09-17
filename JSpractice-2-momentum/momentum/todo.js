@@ -4,13 +4,33 @@ const toDoList = document.querySelector(".js-toDoList");
 
 const TODOS_LS = 'toDos';
 // 로컬 스토리지에서 사용할 배열
-const toDos = [];
+let toDos = [];
+
 
 // 로컬 스토리지에 저장시킴
 function saveToDos() {
     // JSON - 오브젝트를 문자열로 바꿔줌
+    // 삭제할 투두들은 로컬 스토리지에서 지우는 과정은 그냥 새로고침(?)
     localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
 }
+
+//화면에서 투두들 지우기 + 로컬 스토리지에서 삭제하기
+function deleteToDos() {
+    const btn = event.target;
+    const li = btn.parentNode;
+    toDoList.removeChild(li);
+
+    // 배열의 아이템 중 참인것들만 뱉는다
+    // 리턴에 조건을 지정해줄수 있는거임? 신기하누,,
+    const cleanToDos = toDos.filter(function (toDo) {
+        return toDo.id !== parseInt(li.id);
+    });
+
+    // 필터함수: for each처럼 각각의 아이템들과 함수를 실행시킴 도트로 이어진 배열등과
+    toDos = cleanToDos;
+    saveToDos();
+}
+
 
 // 투두가 써진 html element를 만듬
 function paintTodo(text) {
@@ -20,6 +40,8 @@ function paintTodo(text) {
     
     const span = document.createElement("span")
     span.innerText = text
+
+    delBtn.addEventListener("click", deleteToDos);
 
     const newId = toDos.length + 1
     
@@ -74,7 +96,6 @@ function loadToDos() {
 function init() {
     loadToDos();
     toDoForm.addEventListener("submit", handleSubmit);
-
 };
 
 init();

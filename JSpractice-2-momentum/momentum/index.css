@@ -2,6 +2,9 @@ body {
     background-color: grey;
 }
 
+h1 {
+    color:white;
+}
 
 .form,
 .greetings {
@@ -10,6 +13,15 @@ body {
 
 .showing {
     display: block;
+    color: white;
+}
+
+li {
+    color:white;
+}
+
+.js-weather {
+    color: white;
 }
 
 @keyframes fadeIn {

@@ -36,7 +36,7 @@ function deleteToDos() {
 function paintTodo(text) {
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
-    delBtn.innerText = "삭제하기";
+    delBtn.innerText = "삭제";
     
     const span = document.createElement("span")
     span.innerText = text

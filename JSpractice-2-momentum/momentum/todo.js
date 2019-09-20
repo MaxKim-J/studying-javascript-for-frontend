@@ -41,6 +41,7 @@ function paintTodo(text) {
     const span = document.createElement("span")
     span.innerText = text
 
+    // 삭제 이벤트 리스너
     delBtn.addEventListener("click", deleteToDos);
 
     const newId = toDos.length + 1

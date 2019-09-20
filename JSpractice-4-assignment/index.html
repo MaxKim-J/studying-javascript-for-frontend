@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pirogramming Timer</title>
+
+    <style>
+        #app {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        img {
+            width: 50%;
+            height: auto;
+            transition: all ease 0.7s;
+            transform: rotate(0deg);
+        }
+
+        .disable {
+            display: none;
+        }
+
+        .enable {
+            display: block;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="anlg-clock">아날로그 타이머</div>
+        <div class="dgt-clock">디지털 타이머</div>
+        <div class="timer">타이머 설정하기</div>
+    </div>
+
+</body>
+<script src="./index.js"></script>
+
+</html>

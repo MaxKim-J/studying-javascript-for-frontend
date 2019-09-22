@@ -1,11 +1,3 @@
-// 	practiceOne.innerText = `지정한 숫자만큼 아날로그 초침이 시계 방향으로 설정된 다음
-//         시작 버튼을 누르면 1초마다 시계 반대 방향으로 움직여서 
-//         결국 12시 방향을 가르키며 종료되는 아날로그 타이머`;
-
-// 	practiceTwo.innerText = `지정한 숫자만큼 타이머가 표시되고 
-//         시작 버튼을 누르면 1초씩 줄어들고 
-//         0초에서 정지하는 디지털 타이머`;
-
 const app = document.querySelector("#app");
 const dgtClock = document.querySelector(".dgt-clock");
 const timer = document.querySelector(".timer");
@@ -38,9 +30,9 @@ function handleMinusBtn() {
 // 버튼 디스에이블드
 function handleStartBtn() {
     const btns = document.querySelector(".timer > div")
-    
     btns.classList.remove("enable");
     btns.classList.add("disable")
+    
     let anlgTimer = setInterval(function () { 
         if(timerTime > 0){
             timerTime--;
@@ -86,9 +78,9 @@ function timerMake() {
     timerDiv.appendChild(minusBtn);
     timerDiv.appendChild(startBtn);
     
-    startBtn.innerText = "시작!";
-    plusBtn.innerText = "플러스!";
-    minusBtn.innerText = "마이나쓰!";
+    startBtn.innerText = "start";
+    plusBtn.innerText = "+";
+    minusBtn.innerText = "-";
 
     // 버튼 이벤트 감지
     plusBtn.addEventListener("click", handlePlusBtn)
